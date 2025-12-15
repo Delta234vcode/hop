@@ -1,26 +1,42 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "es5",
+    // Type Checking
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+
+    // Modules
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+
+    // Emit
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    // Language and Environment
+    "target": "es2020",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": false,
-    "moduleResolution": "node",
-    "declaration": true,
-    "sourceMap": false,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "allowJs": true,
-    "downlevelIteration": true,
-    "paths": {
-      "*": ["node_modules/*"]
-    },
-    "typeRoots": ["./node_modules/@types", "./@types"],
-    "lib": ["es6", "es2016", "esnext.asynciterable"]
+
+    // Interop Constraints
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Projects
+    "composite": true,
+
+   /**
+    * Custom config - reverse over time as codebase is cleaned up
+    */
+
+    "strictPropertyInitialization": false, // overwrites strict `true`
+    "useUnknownInCatchVariables": false, // overwrites strcit `true`
   },
-  "include": ["scripts/*", "config/*", "lib/*"],
-  "exclude": ["node_modules/**", "**/*.spec.ts"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
 }
